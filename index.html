@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="CSS/style.css">
+	<script src="JS/scripts.js"></script>
+	<!-- Fuentes -->
+	<!-- Abril FatFace (título y subtítulo)-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+	<!-- Alfa Slab (nombre sección) -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+	<!-- Lato (Menú) -->
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+	<!-- Iconos -->
+	<script src="https://kit.fontawesome.com/addf959a1f.js" crossorigin="anonymous"></script>
+	<!-- Precargar las imagenes -->
+	<link rel="preload" as="image" href="media/hero.jpg">
+	<link rel="preload" as="image" href="media/hero1.jpg">
+	<link rel="preload" as="image" href="media/hero2.jpg">
+	<!-- Librería AOS para scroll -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<title>Lalo Peluquería</title>
+</head>
+<body>
+
+	<div class="contenedorModal" id="modalBienvenida">
+		<div class="cajaModal" id="cajaModalBienvenida">
+			<h1>Bienvenido a la peluquería de LALO</h1>
+			<button onclick="cerrarModalBienvenida()">Entrar</button>
+		</div>
+	</div>
+
+	<header id="encabezado">
+
+		<div class="fondosHero" id="fondo1"></div>
+		<div class="fondosHero" id="fondo2"></div>
+		<div class="fondosHero" id="fondo3"></div>
+		
+		<nav id="navMenu">
+			<a href="index.html">
+					<img src="media/logotipo.png" id="logo" alt="logo">
+			</a>
+
+			<ul id="menu">
+				<li class="elementoMenu"><a href="#encabezado">Inicio</a></li>
+				<li class="elementoMenu"><a href="#sobreMi">Sobre Mí</a></li>
+				<li class="elementoMenu"><a href="#galeria">Galería</a></li>
+				<li class="elementoMenu"><a href="#servicios">Servicios</a>
+
+					<ul id="subMenu">
+						<li class="elmentoSubMenu"><a href="#servicios" onclick="activarPestana('lavado-corte', 'pestanaLavado')">Lavado y corte</a></li>
+						<li class="elmentoSubMenu"><a href="#servicios" onclick="activarPestana('color', 'pestanaColor')">Color</a></li>
+						<li class="elmentoSubMenu"><a href="#servicios" onclick="activarPestana('mechas', 'pestanaMechas')">Mechas</a></li>
+						<li class="elmentoSubMenu"><a href="#servicios" onclick="activarPestana('permanente', 'pestanaPermanente')">Permanente</a></li>
+						<li class="elmentoSubMenu"><a href="#servicios" onclick="activarPestana('nutricion', 'pestanaNutricion')">Nutrición</a></li>
+					</ul>
+
+				</li>
+				<li class="elementoMenu"><a href="#contacto">Contacto</a></li>
+			</ul>
+		</nav>
+
+		<h1 id="tituloEncabezado">LALO</h1>
+		<h2 id="subtituloEncabezado">Hair and Beauty Salon</h2>
+
+	</header>
+
+	<section id="sobreMi">
+		
+		<div class="contenedorTituloSeccion">
+			<h3 class="tituloSeccion" data-aos="fade-right" data-aos-duration="2000">Sobre Mí</h3>
+		</div>
+
+		<div id="contenedorSobreMi" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
+			<div class="colSobreMi">
+				<p>En Lalo Hair Beauty Salon nos especializamos en resaltar tu estilo único. Ofrecemos una amplia gama de servicios de peluquería y cuidado del cabello, desde cortes modernos hasta tratamientos de coloración innovadores. Nuestro equipo profesional está comprometido a brindarte una experiencia excepcional en un ambiente acogedor y relajado. ¡Visítanos hoy y descubre la diferencia en Lalo Hair Beauty Salon!</p>
+			</div>
+
+			<div class="colSobreMi">
+					<video id="videoSobreMi" src="media/video.mp4" controls autoplay muted></video>
+			</div>
+		</div>
+	
+		
+
+	</section>
+
+	<section id="galeria">
+
+		<div class="contenedorTituloSeccion">
+			<h3 class="tituloSeccion" data-aos="fade-left" data-aos-duration="2000">Galería</h3>
+		</div>
+
+		<div id="contenedorGaleria">
+
+			<img src="media/galeria1.jpg" class="contenedorImgGaleria" data-aos="flip-up">
+			<img src="media/galeria2.jpg" class="contenedorImgGaleria" data-aos="flip-up">
+			<img src="media/galeria3.jpg" class="contenedorImgGaleria" data-aos="flip-up">
+			<img src="media/galeria4.jpg" class="contenedorImgGaleria" data-aos="flip-down">
+			<img src="media/galeria5.jpg" class="contenedorImgGaleria" data-aos="flip-down">
+			<img src="media/galeria6.jpg" class="contenedorImgGaleria" data-aos="flip-down">
+		</div>
+
+		<div class="contenedorModal" id="lightBox">
+			<div class="cajaModal" id="boxLightBox">
+				
+			</div>
+
+			<button class="botonesLB botonIzq" onclick="anteriorImagen()"><i class="fa-solid fa-angle-left"></i></button>
+
+			<button class="botonesLB botonDer" onclick="siguienteImagen()"><i class="fa-solid fa-angle-right"></i></button>
+		</div>
+
+	</section>
+
+
+	<section id="servicios">
+
+		<div class="contenedorTituloSeccion">
+			<h3 class="tituloSeccion" data-aos="fade-right" data-aos-duration="2000">Servicios</h3>
+		</div>
+
+		<div id="contenedorEtiquetaPestanas">
+			<p class="etiquetaPestanas" id="pestanaLavado" onclick="activarPestana('lavado-corte', 'pestanaLavado')">Lavado y corte</p>
+			<p class="etiquetaPestanas" id="pestanaColor" onclick="activarPestana('color', 'pestanaColor')">Color</p>
+			<p class="etiquetaPestanas" id="pestanaMechas" onclick="activarPestana('mechas', 'pestanaMechas')">Mechas</p>
+			<p class="etiquetaPestanas" id="pestanaPermanente" onclick="activarPestana('permanente', 'pestanaPermanente')">Permanente</p>
+			<p class="etiquetaPestanas" id="pestanaNutricion" onclick="activarPestana('nutricion', 'pestanaNutricion')">Nutrición</p>
+		</div>
+
+		<div class="contenedorPestanas active" id="lavado-corte">
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio1.jpg" alt="servicio1">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio2.jpg" alt="servicio2">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio3.jpg" alt="servicio3">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio" alt="servicio4">
+					<img src="media/servicio4.jpg">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+		</div>
+
+
+		<div class="contenedorPestanas" id="color">
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio4.jpg" alt="servicio1">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio3.jpg" alt="servicio2">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio2.jpg" alt="servicio3">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio" alt="servicio4">
+					<img src="media/servicio1.jpg">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+		</div>
+
+
+		<div class="contenedorPestanas" id="mechas">
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio2.jpg" alt="servicio1">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio1.jpg" alt="servicio2">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio4.jpg" alt="servicio3">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio" alt="servicio4">
+					<img src="media/servicio3.jpg">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+		</div>
+
+
+		<div class="contenedorPestanas" id="mechas">
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio3.jpg" alt="servicio1">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio2.jpg" alt="servicio2">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio1.jpg" alt="servicio3">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio" alt="servicio4">
+					<img src="media/servicio4.jpg">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+		</div>
+
+
+		<div class="contenedorPestanas" id="permanente">
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio2.jpg" alt="servicio1">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio4.jpg" alt="servicio2">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio1.jpg" alt="servicio3">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio" alt="servicio4">
+					<img src="media/servicio3.jpg">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+		</div>
+
+
+		<div class="contenedorPestanas" id="nutricion">
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio1.jpg" alt="servicio1">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio2.jpg" alt="servicio2">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio">
+					<img src="media/servicio3.jpg" alt="servicio3">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+
+			<div class="servicio">
+				<div class="imagenServicio" alt="servicio4">
+					<img src="media/servicio4.jpg">
+				</div>
+				<p class="nombreServicio">Nombre Servicio</p>
+				<p class="precioServicio">Precio Servicio</p>
+			</div>
+		</div>
+		
+	</section>
+
+
+	<section id="contacto">
+		
+		<div class="contenedorTituloSeccion">
+			<h3 class="tituloSeccion" data-aos="fade-left" data-aos-duration="2000">Contacto</h3>
+		</div>
+
+		<div id="contenedorContacto">
+			<div class="colContacto" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.02611748462!2d-0.686256624640167!3d37.976519800513934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63a985986c30ed%3A0x254125000c061781!2sLalo%20Hair%20and%20Beauty%20Salon!5e0!3m2!1ses!2ses!4v1710359058518!5m2!1ses!2ses" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+
+			<div class="colContacto" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+				<form action="">
+					<p id="textoCita">Cita</p>
+					<div id="datosCita">
+
+						<input type="text" id="nombre" placeholder="Nombre y Apellido" required>
+						<input type="date" id="fecha" placeholder="Fecha" required>
+						<input type="tel" id="telefono" placeholder="Teléfono" required>
+						<input type="email" id="email" placeholder="E-mail" required>
+						<button type="button" id="botonEnviar" onclick="modalReserva()">Enviar</button>
+
+					</div>
+				</form>
+			</div>	
+		</div>
+
+		<div class="contenedorModal" id="modalReserva">
+			<div class="cajaModal" id="cajaModalReserva">
+				<h3>Cita</h3>
+				<p id="mensajeFormulario"></p>
+				<button  onclick="cerrarModalReserva()">Volver</button>
+			</div>
+		</div>
+
+	</section>
+	
+	<footer id="pie">
+		<div id="contenedorPie">
+			<div class="colPie" >
+				<p id="horario">Horario</p>
+				<p id="horas">Lunes a Viernes de 10:00 a 14:00 y de 16:00 a 20:00</p>
+			</div>
+
+			<div class="colPie">
+					<div class="imgRedes">
+						<img src="media/facebook.png" alt="facebook">
+					</div>
+					<div class="imgRedes">
+						<img src="media/instagram.png" alt="instagram">
+					</div>
+					<div class="imgRedes">
+						<img src="media/twitter.png" alt="twitter">
+					</div>
+			</div>
+		</div>
+	</footer>
+
+<script>
+	setInterval(slideShowAnimado,3000);
+	lightBox();
+	modalBienvenida();
+</script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>

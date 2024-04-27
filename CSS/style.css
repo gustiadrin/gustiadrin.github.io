@@ -1,0 +1,696 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*----------------Modal-----------------*/
+
+.contenedorModal{
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	top: 0px;
+	display: none;
+	z-index: 5;
+}
+
+.cajaModal{
+	width: 500px;
+	height: 300px;
+	background-color: #907E91;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	border-radius: 26px 26px 26px 26px;
+	-webkit-border-radius: 26px 26px 26px 26px;
+	-moz-border-radius: 26px 26px 26px 26px;
+}
+
+.cajaModal>h1{
+	font-family: "Abril Fatface", serif;
+	font-size: 2rem;
+	color: #FFFB7C;
+	margin-top: 50px;
+	margin-bottom: 70px;
+}
+
+.cajaModal>button{
+	font-family: "Lato", sans-serif;
+	font-size: 1.5rem;
+	padding: 10px 20px;
+	color: #907E91;
+	border-radius: 26px 26px 26px 26px;
+	-webkit-border-radius: 26px 26px 26px 26px;
+	-moz-border-radius: 26px 26px 26px 26px;
+	border-color: #907E91;
+	transition-property: background-color;
+	transition-property: color;
+	transition-duration: 1s;
+}
+
+.cajaModal>button:hover{
+	background-color: #FFFB7C;
+	color: black;
+}
+
+/*----------------Encabezado---------------*/
+
+/*Hero image*/
+#encabezado{
+	width: 100%;
+	height: 1000px;
+	background-repeat: no-repeat;
+}
+
+.fondosHero{
+	width: 100%;
+	height: 1000px;
+	background-size: cover;
+	position: absolute;
+}
+
+#fondo1{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../media/hero.jpg");
+	z-index: 3;
+}
+
+#fondo2{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../media/hero1.jpg");
+	z-index: 2;
+}
+
+#fondo3{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../media/hero2.jpg");
+	z-index: 1;
+}
+
+body{
+	overflow-x: hidden;
+}
+
+.mainSlide{
+	animation-name: mainSlideAnim;
+	animation-iteration-count: 1;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;	
+}
+
+.nextSlide{
+	animation-name: nextSlideAnim;
+	animation-iteration-count: 1;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;	
+}
+
+.hiddenSlide{
+	display: none;
+}
+
+@keyframes mainSlideAnim{
+	0%{margin-left: 0%;}
+	100%{margin-left: -100%}
+}
+
+@keyframes nextSlideAnim{
+	0%{margin-left: 100%;}
+	100%{margin-left: 0%}
+}
+
+#tituloEncabezado{
+	font-family: "Abril Fatface", serif;
+	font-style: normal;
+	font-size: 18rem;
+	color: #FFFB7C;
+	text-shadow: -1px 9px 7px rgba(0,0,0,0.52);
+
+	/*Esto centra el texto y su contenedor*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	position: relative;
+	top: 260px;
+	z-index: 4;
+
+	animation-name: titulo;
+	animation-duration: 1.5s;
+}
+
+#subtituloEncabezado{
+	font-family: "Abril Fatface", serif;
+	font-style: normal;
+	color: #FFFB7C;
+	font-size: 4rem;
+	text-shadow: 1px 4px 7px rgba(0,0,0,0.52);
+
+	/*Esto centra el texto y su contenedor*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	z-index: 4;
+
+	position: relative;
+	top: 210px;
+
+	animation-name: subTitulo;
+	animation-duration: 1.5s;
+}
+
+@keyframes titulo{
+	0% {opacity: 0; top: 180px;}
+	25% {opacity: 0.5; color: white;top: 200px;}
+	50% {opacity: 0.5; color: white;top: 220px;}
+	75% {opacity: 1; top: 240px;}
+	100% {opacity: 1; top: 260px;}
+}
+
+@keyframes subTitulo{
+	0% {opacity: 0; top: 290px;}
+	25% {opacity: 0.5; color: white;top: 270px;}
+	50% {opacity: 0.5; color: white;top: 250px;}
+	75% {opacity: 1; top: 230px;}
+	100% {opacity: 1; top: 210px;}
+}
+
+/*---------------Menú principal---------------*/
+
+nav{
+	width: 100%;
+	height: 150px;
+	background-color: #907E91;
+/*	overflow: hidden;*/
+	position: fixed;
+	font-size: 2rem;
+	top: 0px;
+	z-index: 1;
+	transition-property: top, height, font-size;
+	transition-duration: 1.3s;
+	z-index: 5;
+}
+
+#logo{
+	width: auto;
+	height: 100%;
+/*	background-color: grey;*/
+	float: left;
+	margin-left: 100px;
+}
+
+#menu{
+	list-style: none;
+	overflow: hidden;
+	float: right;
+	margin-right: 100px;
+	line-height: 150px;
+	transition-property: line-height;
+	transition-duration: 1.3s;
+}
+
+.elementoMenu{
+	/*Esto hace que los elementos se pongan en columnas porque saca del "orden" natural a los elementos, que sería uno debajo del otro*/
+	float: left; 
+	margin: 0px 30px;
+}
+
+.elementoMenu>a{
+	color: #FFFB7C;
+	text-decoration: none;
+	font-family: "Lato", sans-serif;
+	transition-property: color;
+	transition-duration: 0.5s;
+}
+
+.elementoMenu>a:hover{
+	color: black;
+}
+
+#subMenu{
+	width: auto;
+	height: 250px;
+	list-style: none;
+	position: absolute;
+	z-index: 1;
+	top: 100px;
+	display: none;
+	background-color: #907E91;
+}
+
+.elmentoSubMenu{
+	width: 100%;
+	height: 50px;
+	font-size: 1.5rem;
+	line-height: 50px;
+	font-family: "Lato", sans-serif;
+}
+
+.elmentoSubMenu>a{
+	color: #FFFB7C;
+	text-decoration: none;
+	transition-property: color;
+	transition-duration: 0.5s;
+}
+
+.elmentoSubMenu>a:hover{
+	color: black;
+}
+
+/*Haremos que aparezca el menú. Cuando se pone espacio en un selector multiple, puede ser cualquier descendiente (hijo, nieto, etc)*/
+
+.elementoMenu:hover #subMenu{
+	display: block;
+}
+
+/*-----------------Aquí termina el header------------*/
+
+/*--------------------Seccion sobre mi---------------*/
+
+#sobreMi{
+	width: 100%;
+	height: 920px;
+	background-color: #FCCBCF;
+	overflow: hidden;
+
+}
+
+.contenedorTituloSeccion{
+	width: 100%;
+	height: 100px;
+	background-color: #907E91;
+
+}
+.tituloSeccion{
+	font-family: "Alfa Slab One", serif;
+	color: #FFFB7C;
+	font-size: 4rem;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	position: relative;
+	top: 10px;
+	text-shadow: -1px 2px 7px rgba(0,0,0,0.81);
+}
+
+#contenedorSobreMi{
+	height: 550px;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	margin-top: 100px;
+	overflow: hidden;
+}
+
+.colSobreMi{
+	width: 50%;
+	height: 550px;
+	background-color:  #FCCBCF;
+	float: left;
+}
+
+.colSobreMi >p{
+	margin-top: 70px;
+	font-family: "Lato", sans-serif;
+	font-size: 1.5rem;
+	line-height: 2;
+	padding-right: 20px;
+}
+
+
+#videoSobreMi{
+	width: 450px;
+	height: 100%;
+/*	background-color: grey;*/
+	float: right;
+	border-radius: 26px 26px 26px 26px;
+	-webkit-border-radius: 26px 26px 26px 26px;
+	-moz-border-radius: 26px 26px 26px 26px;
+}
+
+/*-----------------Seccion galería---------------*/
+
+#galeria{
+	width: 100%;
+	height: 1000px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../media/reviews.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#contenedorGaleria{
+	width: 1215px;
+	height: 535px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+}
+
+.contenedorImgGaleria{
+	width: calc(33.33% - 15px);
+	height: calc(50% - 15px);
+	background-color: grey;
+	border-style: solid;
+	margin-left: 7.5px;
+	margin-right: 7.5px;
+	margin-top: 7.5px;
+	margin-bottom: 7.5px;
+	float: left;
+	border-radius: 26px 26px 26px 26px;
+	-webkit-border-radius: 26px 26px 26px 26px;
+	-moz-border-radius: 26px 26px 26px 26px;
+}
+
+.contenedorImgGaleria:hover{
+	box-shadow: 0px 0px 77px 10px rgba(255,251,124,1);
+	cursor: pointer;
+}
+.cajaModal#boxLightBox{
+	height: 864px;
+	width: 80vw;
+}
+
+.imagenLightBox{
+	width: 100%;
+	height: auto;
+	border-radius: 26px 26px 26px 26px;
+	-webkit-border-radius: 26px 26px 26px 26px;
+	-moz-border-radius: 26px 26px 26px 26px;
+}
+
+.botonesLB{
+	width: 100px;
+	height: 100px;
+	border-radius: 25%;
+	top: 50%;
+	position: absolute;
+	transform: translateY(-50%);
+	background-color: #907E91;
+	color: #FFFB7C;
+}
+
+.botonDer{
+	right: 30px;
+}
+
+.botonIzq{
+	left: 30px;
+}
+
+.botonesLB i {
+	font-size: 3rem;
+}
+
+.botonesLB:hover {
+	color: #907E91;
+	background-color: #FFFB7C;
+	border-style: solid;
+	border-color: #907E91;
+	border-width: 5px;
+}
+
+
+
+
+/*----------------Seccion servicios-------------*/
+
+#servicios{
+	width: 100%;
+	height: 1000px;
+	background-color:  #FCCBCF;
+
+}
+
+#contenedorEtiquetaPestanas{
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+.etiquetaPestanas{
+	font-family: "Lato", sans-serif;
+	font-size: 2rem;
+	color: #949CDA;
+	float: left;
+	text-align: center;
+	margin-left: 15px;
+	margin-right: 15px;
+	width: calc(20% - 30px);
+	height: 42px;
+}
+
+.pestanaActiva{
+	font-family: "Lato", sans-serif;
+	font-size: 2rem;
+	color: #FFFB7C;
+	border-bottom: solid;
+	text-shadow: 1px -1px 5px rgba(0,0,0,0.6);
+}
+
+.etiquetaPestanas:hover{
+	cursor: pointer;
+	font-family: "Lato", sans-serif;
+	font-size: 2rem;
+	color: #FFFB7C;
+/*	text-decoration: underline;*/
+	border-bottom: solid;
+	text-shadow: 1px -1px 5px rgba(0,0,0,0.6);
+}
+
+.contenedorPestanas{
+	width: 840px;
+	height: 620px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+.contenedorPestanas {
+  display: none;
+}
+
+.contenedorPestanas.active {
+  display: block;
+}
+
+.servicio{
+	width: calc(50% - 80px);
+	height: calc(50% - 80px);
+	float: left;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.imagenServicio{
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 26px 26px 26px 26px;
+	-webkit-border-radius: 26px 26px 26px 26px;
+	-moz-border-radius: 26px 26px 26px 26px;
+	border-style: solid;
+	border-color: #FFFB7C;
+}
+
+.imagenServicio img{
+	width: 100%;
+	height: auto;
+	transition-property: transform;
+	transition-duration: 0.5s;
+}
+
+.imagenServicio img:hover {
+	transform: scale(1.2,1.2);
+}
+
+.nombreServicio{
+	text-align: center;
+	margin-top: 10px;
+	color: black;
+	font-family: "Lato", sans-serif;
+
+}
+
+.precioServicio{
+	text-align: center;
+	margin-top: 10px;
+	color: black;
+	font-family: "Lato", sans-serif;
+}
+
+@keyframes servicio{
+	from {opacity: 0;}
+  	to {opacity: 1;}
+}
+
+.servicioAnimado{
+	animation-name: servicio;
+	animation-duration: 3s;
+}
+
+/*---------------Seccion contacto---------------*/
+
+#contacto{
+	width: 100%;
+	height: 1000px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../media/contacto.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#contenedorContacto{
+	width: 1200px;
+	height: 600px;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+
+.colContacto{
+	float: left;
+}
+
+.colContacto iframe{
+	margin-left: 50px;
+	margin-top: 100px;
+	margin-right: 50px;
+	border-radius: 26px 26px 26px 26px;
+	-webkit-border-radius: 26px 26px 26px 26px;
+	-moz-border-radius: 26px 26px 26px 26px;
+
+}
+
+.colContacto form{
+	width: 500px;
+	height: 500px;
+	margin: 50px;
+	border-style: solid;
+	border-radius: 26px 26px 26px 26px;
+	-webkit-border-radius: 26px 26px 26px 26px;
+	-moz-border-radius: 26px 26px 26px 26px;
+	float: left;
+}
+
+#textoCita{
+	text-align: center;
+	font-family: "Lato", sans-serif;
+	font-size: 3rem;
+	color: #FFFB7C;
+	padding-top: 10px;
+}
+
+#datosCita{
+	padding-top: 50px;
+}
+
+input{
+	display: block;
+	margin: auto;
+	width: 400px;
+	height: 50px;
+	margin-bottom: 30px;
+	padding-left: 10px;
+	border-radius: 9px 9px 9px 9px;
+	-webkit-border-radius: 9px 9px 9px 9px;
+	-moz-border-radius: 9px 9px 9px 9px;
+}
+
+.cajaModal#cajaModalReserva{
+	height: 300px;
+	width: 550px;
+}
+
+.cajaModal#cajaModalReserva>h3 {
+	margin-top: 20px;
+	font-family: "Abril Fatface", serif;
+	font-size: 2rem;
+	color: #FFFB7C;
+}
+
+.cajaModal#cajaModalReserva>p {
+	margin-top: 40px;
+	text-align: center;
+	font-family: "Lato", sans-serif;
+	font-size: 1rem;
+	color: #FFFB7C;
+	padding-top: 10px;
+}
+
+.cajaModal#cajaModalReserva>button {
+	margin-top: 50px;
+}
+
+#botonEnviar{
+	width: 120px;
+	height: 40px;
+	margin-left: 190px;
+	background-color: #FFFB7C;
+	border-style: none;
+	text-align: center;
+	font-family: "Lato", sans-serif;
+	font-size: 1.25rem;
+	border-style: solid;
+	border-radius: 26px 26px 26px 26px;
+	-webkit-border-radius: 26px 26px 26px 26px;
+	-moz-border-radius: 26px 26px 26px 26px;
+	border-color: #907E91;
+	transition-property: background-color, color;
+	transition-duration: 0.5s;
+}
+
+#botonEnviar:hover{
+	background-color: #907E91;
+	color: #FFFB7C;
+}
+
+/*--------------Footer----------------*/
+
+#pie{
+	width: 100%;
+	height: 150px;
+	background-color: #907E91;
+	overflow: hidden;
+}
+
+#contenedorPie{
+	width: 1200px;
+	height: 100px;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+
+.colPie{
+	width: 400px;
+	height: 40px;
+	float: left;
+	margin: 25px 100px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.imgRedes{
+	width: 40px;
+	height: 40px;
+	margin-left: 70px;
+	float: left;
+}
+
+
+#horas{
+	font-family: "Lato", sans-serif;
+	font-size: 1.1rem;
+}
+
+#horario{
+	font-family: "Lato", sans-serif;
+	font-size: 1.1rem;
+}
